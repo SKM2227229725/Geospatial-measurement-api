@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Field A</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>75.900,31.500,0 75.901,31.500,0 75.901,31.501,0 75.900,31.501,0 75.900,31.500,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Road B</name>
+      <LineString>
+        <coordinates>75.900,31.500,0 75.902,31.502,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Well C</name>
+      <Point>
+        <coordinates>75.9005,31.5005,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
