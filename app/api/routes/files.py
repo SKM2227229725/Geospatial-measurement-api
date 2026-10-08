@@ -38,7 +38,10 @@ def upload_file(
     "/{file_id}/",
     response_model=FileSummary,
     summary="Get processing status of a file",
-    responses={404: {"model": ErrorResponse}},
+    responses={
+        404: {"model": ErrorResponse, "description": "File not found"},
+        422: {"model": ErrorResponse, "description": "Validation error"},
+    },
 )
 def get_file(file_id: str, repo: FileRepository = Depends(get_repository)):
     return file_service.get_file_or_404(repo, file_id)
@@ -48,7 +51,11 @@ def get_file(file_id: str, repo: FileRepository = Depends(get_repository)):
     "/{file_id}/measurements/",
     response_model=FileMeasurements,
     summary="Get features with area/length measurements",
-    responses={404: {"model": ErrorResponse}, 409: {"model": ErrorResponse}},
+    responses={
+        404: {"model": ErrorResponse, "description": "File not found"},
+        409: {"model": ErrorResponse, "description": "File is not COMPLETED yet"},
+        422: {"model": ErrorResponse, "description": "Validation error"},
+    },
 )
 def get_measurements(file_id: str, repo: FileRepository = Depends(get_repository)):
     record = file_service.get_completed_file(repo, file_id)
