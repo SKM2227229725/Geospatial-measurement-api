@@ -17,7 +17,7 @@ Built with FastAPI, GeoPandas, Shapely and PyProj.
   - Point / MultiPoint: no measurement (null)
   - GeometryCollection and unknown types: handled gracefully, never crashes
 - CRS handling
-  - Geographic CRS (e.g. EPSG:4326) is auto-projected to the best-fit UTM zone
+  - Geographic CRS (e.g. EPSG:4326) is auto-projected to the best-fit UTM zone.
   - Metre-based projected CRS is used as-is (Web Mercator is deliberately replaced)
   - Missing CRS is rejected with a clear 422 error
 - Security
@@ -178,7 +178,6 @@ distorts area away from the equator.
 ---
 
 ## Security
-
 - Only .kml and .zip are accepted (extension + magic bytes).
 - Uploads are streamed to disk and rejected the moment they exceed the limit.
 - ZIP extraction enforces:
