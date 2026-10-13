@@ -1,9 +1,8 @@
 ﻿# Geospatial Measurement API
 
-A small backend service that accepts a geospatial file (KML or a zipped
-Shapefile), reads its features, and returns area / length measurements.
+A lightweight geospatial backend API built with **FastAPI** that processes KML files and zipped Shapefiles to calculate geographic area and length measurements.
 
-Built with FastAPI, GeoPandas, Shapely and PyProj.
+Powered by **GeoPandas, Shapely, and PyProj**, it provides a simple and efficient way to extract geospatial features and perform spatial measurements through RESTful endpoints.
 
 ---
 
